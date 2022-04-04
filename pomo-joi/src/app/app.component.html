@@ -297,21 +297,12 @@
 
 <!-- Toolbar -->
 <div class="toolbar" role="banner">
- 
-  Pomodoro App
-
+  <div class="btn-group" role="group" aria-label="Basic example">
+    <button type="button" class="btn btn-primary"
+      onclick=" window.open('https://github.com/JoicePaz/pomo-joi','_blank')">Pomodoro App</button>
+  </div>
 </div>
 
 <div class="content" role="main">
-
-
-
-  <div class="card-container">
-
-    <app-timer></app-timer>
-    <!-- Links -->
-
-
-
-  </div>
+  <router-outlet></router-outlet>
 </div>
