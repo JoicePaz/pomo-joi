@@ -1,5 +1,5 @@
 <h1>
-  {{ minutos }} : {{ segundos }}
+  {{ minutos }} : <div *ngIf="segundos != 0">{{ segundos }}</div> <div *ngIf="segundos === 0">00</div>
 </h1>
 
 <button class="btn btn-primary" (click)="this.iniciarTimer();"><i class="fa-solid fa-play"></i></button>
