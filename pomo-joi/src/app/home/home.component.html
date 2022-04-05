@@ -1,1 +1,45 @@
-<p>home works!</p>
+<div class="container-fluid d-flex justify-content-center align-items-center" style="height:100vh; overflow:hidden;">
+  <div class="row text-center d-flex align-items-center" style="overflow:hidden; width:50vw; height:50vh;">
+
+    <div class="container">
+      <div class="row">
+        <div class="col-4">
+          <input type="number" class="form-control" id="trabalho" name="trabalho" min="0" max="60" step="1"
+            [value]="this.trabalho">
+        </div>
+
+        <div class="col-4">
+          <input type="number" class="form-control" id="pausa" name="pausa" min="0" max="60" step="1"
+            [value]="this.pausa">
+        </div>
+
+        <div class="col-4">
+          <input type="number" class="form-control" id="sessoes" name="sessoes" min="0" max="10" step="1"
+            [value]="this.sessoes">
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-4">
+          Trabalho
+        </div>
+
+        <div class="col-4">
+          Pausa
+        </div>
+
+        <div class="col-4">
+          Sessões
+        </div>
+      </div>
+
+      <div class="row justify-content-end">
+        <div class="col-4">
+          <button class="btn btn-primary" routerLinkActive="router-link-active"
+            [routerLink]="'/start'">Continuar</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>

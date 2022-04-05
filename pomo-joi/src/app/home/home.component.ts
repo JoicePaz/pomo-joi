@@ -6,6 +6,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
+  trabalho: number = 25;
+  pausa: number = 5;
+  sessoes: number = 3;
+  routerLink: string = '';
 
   constructor() { }
 
