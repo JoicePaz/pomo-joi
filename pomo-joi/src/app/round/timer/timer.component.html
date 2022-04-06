@@ -1,11 +1,11 @@
-  <div class="row">
-    <div class="col-5" id="teste">
-      <h1 class="container">
-        {{ minutos }} : <div *ngIf="segundos != 0">{{ segundos }}</div>
-        <div *ngIf="segundos === 0">00</div>
-      </h1>
-    </div>
-    <div class="col-2">
-      <button class="btn btn-primary" (click)="this.iniciarTimer();"><i class="fa-solid fa-play"></i></button>
-    </div>
+<div class="row justify-content-center ">
+  <div class="col-5">
+    <h1 class="container">
+      {{ minutos }} : <div *ngIf="segundos != 0">{{ segundos }}</div>
+      <div *ngIf="segundos === 0">00</div>
+    </h1>
   </div>
+  <div class="col-2">
+    <button class="btn btn-primary" (click)="this.iniciarTimer();"><i class="fa-solid fa-play"></i></button>
+  </div>
+</div>
