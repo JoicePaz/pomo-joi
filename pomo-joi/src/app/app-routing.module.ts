@@ -5,7 +5,7 @@ import { RoundComponent } from './round/round.component';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full' , component: HomeComponent},
-  { path: 'start', component: RoundComponent }
+  { path: 'start/:trabalho/:pausa/:sessoes', component: RoundComponent }
 ];
 
 @NgModule({

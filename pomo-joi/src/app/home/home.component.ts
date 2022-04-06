@@ -6,9 +6,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-  trabalho: number = 25;
-  pausa: number = 5;
-  sessoes: number = 3;
+  trabalho: any = 25;
+  pausa: any = 5;
+  sessoes: any = 3;
+
   routerLink: string = '';
 
   constructor() { }
@@ -16,4 +17,19 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  atualizarTrabalho(evento: Event) {
+    this.trabalho = (<HTMLInputElement>evento.target).value
+  }
+
+  atualizarPausa(evento: Event) {
+    this.pausa = (<HTMLInputElement>evento.target).value;
+  }
+
+  atualizarSessoes(evento: Event) {
+    this.sessoes = (<HTMLInputElement>evento.target).value;
+  }
+
+  montarRota() {
+    this.routerLink = `/start/${this.trabalho}/${this.pausa}/${this.sessoes}`;
+  }
 }

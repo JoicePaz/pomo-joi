@@ -6,26 +6,26 @@
         <div class="col-4">
           <label>Trabalho</label>
           <input type="number" class="form-control" id="trabalho" name="trabalho" min="0" max="60" step="1"
-            [value]="this.trabalho">
+            [value]="this.trabalho" (change)="atualizarTrabalho($event)">
         </div>
 
         <div class="col-4">
           <label>Pausa</label>
           <input type="number" class="form-control" id="pausa" name="pausa" min="0" max="60" step="1"
-            [value]="this.pausa">
+            [value]="this.pausa" (change)="atualizarPausa($event)">
         </div>
 
         <div class="col-4">
           <label>Sessões</label>
           <input type="number" class="form-control" id="sessoes" name="sessoes" min="0" max="10" step="1"
-            [value]="this.sessoes">
+            [value]="this.sessoes" (change)="atualizarSessoes($event)">
         </div>
       </div>
 
       <div class="row justify-content-end">
         <div class="col-4">
-          <button class="btn btn-primary" routerLinkActive="router-link-active"
-            [routerLink]="'/start'">Continuar</button>
+          <button class="btn btn-primary" routerLinkActive="router-link-active" [routerLink]="routerLink"
+            (click)="montarRota()">Continuar</button>
         </div>
       </div>
     </div>

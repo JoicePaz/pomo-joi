@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { zip } from 'rxjs';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-timer',
@@ -7,17 +7,22 @@ import { zip } from 'rxjs';
   styleUrls: ['./timer.component.css']
 })
 export class TimerComponent implements OnInit {
-  minutos: number = 25;
+  // minutos = this.route.snapshot.params.[trabalho];
   segundos: number = 0;
+  minutos: any;
+  iniciar: boolean = true;
+  pausar: boolean = false;
 
-  constructor() { }
+  constructor(private route: ActivatedRoute) { }
 
   ngOnInit(): void {
-
-   
+    this.minutos = this.route.snapshot.params['trabalho'];
   }
 
   iniciarTimer() {
+    this.iniciar = false;
+    this.pausar = true;
+
     const intervalo = setInterval(() => {
       if (this.segundos > 0) {
         this.segundos = this.segundos - 1;
@@ -30,6 +35,17 @@ export class TimerComponent implements OnInit {
           this.segundos = 59;
         }
       }
+
+      if(this.pausar === false) {
+        clearInterval(intervalo);
+      }
     }, 1000);
-  };
+  }
+
+  pausarTimer() {
+    this.iniciar = true;
+    this.pausar = false;
+    console.log('~bagaatat')
+  }
+
 }
