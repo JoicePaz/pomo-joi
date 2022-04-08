@@ -13,14 +13,13 @@
 <div class="row mt-5 justify-content-center">
   <div class="col-5">
     <h1 class="container">
-      {{ minutos }}:<div *ngIf="segundos != 0">{{ segundos }}</div>
-      <div *ngIf="segundos === 0">00</div>
+      <div *ngIf="minutos != 0 && minutos >= 10">{{ minutos }}</div><div *ngIf="minutos < 10">0{{ minutos }}</div>:
+      <div *ngIf="segundos != 0 && segundos >= 10">{{ segundos }}</div><div *ngIf="segundos < 10">0{{ segundos }}</div>
     </h1>
   </div>
+  
   <div class="col-2">
     <button class="btn btn-primary" (click)="this.iniciarTimer();" *ngIf="iniciar"><i class="fa-solid fa-play"></i></button>
-
     <button class="btn btn-primary" (click)="this.pausarTimer();" *ngIf="pausar"><i class="fa-solid fa-pause"></i></button>
-
   </div>
 </div>
